@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_access_ui_fqdn.html 
+summary: 了解如何配置您的系统以实现对Web UI的FQDN访问。 
+keywords: netapp, hci, fqdn, ui, access, web, administration 
+---
+= 配置完全限定域名 Web UI 访问
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用Element 12.2或更高版本的NetApp HCI可以使用完全限定域名(FQDN)访问存储集群Web界面。如果要使用 FQDN 访问 Web 用户界面，例如 Element Web UI ，每节点 UI 或管理节点 UI ，则必须先添加存储集群设置以确定集群使用的 FQDN 。这样，集群就可以正确重定向登录会话，并改进与外部服务（例如密钥管理器和身份提供程序）的集成，以实现多因素身份验证。
+
+.您需要的内容
+* 此功能需要 Element 12.2 或更高版本。
+* 使用 NetApp Hybrid Cloud Control REST API 配置此功能需要使用管理服务 215 或更高版本。
+* 使用 NetApp Hybrid Cloud Control UI 配置此功能需要管理服务 2.19 或更高版本。
+* 要使用 REST API ，必须已部署运行 11.5 或更高版本的管理节点。
+* 您需要管理节点和每个存储集群的完全限定域名，这些域名可以正确解析为管理节点 IP 地址和每个存储集群 IP 地址。
+
+
+您可以使用 NetApp Hybrid Cloud Control 和 REST API 配置或删除 FQDN Web UI 访问。您还可以对配置不正确的 FQDN 进行故障排除。
+
+* <<使用 NetApp Hybrid Cloud Control 配置 FQDN Web UI 访问>>
+* <<使用 REST API 配置 FQDN Web UI 访问>>
+* <<使用 NetApp Hybrid Cloud Control 删除 FQDN Web UI 访问>>
+* <<使用 REST API 删除 FQDN Web UI 访问>>
+* <<故障排除>>
+
+
+
+
+== 使用 NetApp Hybrid Cloud Control 配置 FQDN Web UI 访问
+
+.步骤
+. 在Web浏览器中打开管理节点的IP地址：
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+. 通过提供存储集群管理员凭据登录到 NetApp Hybrid Cloud Control 。
+. 选择页面右上角的菜单图标。
+. 选择 * 配置 * 。
+. 在 * 完全限定域名 * 窗格中，选择 * 设置 * 。
+. 在显示的窗口中，输入管理节点和每个存储集群的 FQDN 。
+. 选择 * 保存 * 。
++
+"* 完全限定域名 * " 窗格列出了每个存储集群及其关联的 MVIP 和 FQDN 。
+
++
+
+NOTE: 只有设置了 FQDN 的已连接存储集群才会在 * 完全限定域名 * 窗格中列出。
+
+
+
+
+
+== 使用 REST API 配置 FQDN Web UI 访问
+
+.步骤
+. 确保为网络环境正确配置了 Element 存储节点和管理节点的 DNS ，以便可以解析环境中的 FQDN 。要设置 DNS ，请转到存储节点的每节点 UI 和管理节点，然后选择 * 网络设置 * > * 管理网络 * 。
++
+.. 存储节点的每节点UI： `https://<storage_node_management_IP>:442`
+.. 管理节点的每节点UI： `https://<ManagementNodeIP>:442`
+
+
+. 使用 Element API 更改存储集群设置。
++
+.. 访问Element API并使用API方法创建以下集群接口首选项、然后为此首选项 `CreateClusterInterfacePreference`值插入集群MVIP FQDN：
++
+*** 名称： `mvip_fqdn`
+*** 值： < 集群 MVIP 的完全限定域名 >
++
+例如，此处的FQDN为 `storagecluster.my.org`：
+
++
+[listing]
+----
+https://<Cluster_MVIP>/json-rpc/12.2?method=CreateClusterInterfacePreference&name=mvip_fqdn&value=storagecluster.my.org
+----
+
+
+
+
+. 在管理节点上使用 REST API 更改管理节点设置：
++
+.. 输入管理节点IP地址并后跟、以访问管理节点的REST API UI `/mnode/2/`。例如：
++
+[listing]
+----
+https://<ManagementNodeIP>/mnode/2/
+----
+.. 选择 * 授权 * 或任何锁定图标，然后输入 Element 集群用户名和密码。
+.. 将客户端ID输入为 `mnode-client`。
+.. 选择 * 授权 * 以开始会话。
+.. 关闭窗口。
+.. 选择 * 获取 /settings* 。
+.. 选择 * 试用 * 。
+.. 选择 * 执行 * 。
+.. 记下是否按 `true`或 `false`中所示使用代理 `"use_proxy"`。
+.. 选择*put /ssettings *。
+.. 选择 * 试用 * 。
+.. 在"Request body "(请求正文)区域中、输入管理节点FQDN作为参数的值 `mnode_fqdn`。此外、还可以为参数指定是应使用代理还是 `false`从上一步使用代理(`true`) `use_proxy`。
++
+[listing]
+----
+{
+  "mnode_fqdn": "mnode.my.org",
+  "use_proxy": false
+}
+----
+.. 选择 * 执行 * 。
+
+
+
+
+
+
+== 使用 NetApp Hybrid Cloud Control 删除 FQDN Web UI 访问
+
+您可以使用此操作步骤删除管理节点和存储集群的 FQDN Web 访问。
+
+.步骤
+. 在 * 完全限定域名 * 窗格中，选择 * 编辑 * 。
+. 在显示的窗口中，删除 * FQDN * 文本字段中的内容。
+. 选择 * 保存 * 。
++
+此窗口将关闭，并且 FQDN 不再列在 * 完全限定域名 * 窗格中。
+
+
+
+
+
+== 使用 REST API 删除 FQDN Web UI 访问
+
+.步骤
+. 使用 Element API 更改存储集群设置。
++
+.. 使用API方法访问Element API并删除以下集群接口首选项 `DeleteClusterInterfacePreference`：
++
+*** 名称： `mvip_fqdn`
++
+例如：
+
++
+[listing]
+----
+https://<Cluster_MVIP>/json-rpc/12.2?method=DeleteClusterInterfacePreference&name=mvip_fqdn
+----
+
+
+
+
+. 在管理节点上使用 REST API 更改管理节点设置：
++
+.. 输入管理节点IP地址并后跟、以访问管理节点的REST API UI `/mnode/2/`。例如：
++
+[listing]
+----
+https://<ManagementNodeIP>/mnode/2/
+----
+.. 选择 * 授权 * 或任何锁定图标，然后输入 Element 集群用户名和密码。
+.. 将客户端ID输入为 `mnode-client`。
+.. 选择 * 授权 * 以开始会话。
+.. 关闭窗口。
+.. 选择*put /ssettings *。
+.. 选择 * 试用 * 。
+.. 在“请求正文”区域中，不要为参数输入值 `mnode_fqdn`。此外，还可以指定是否应将代理用于(`true`参数或 `false`。 `use_proxy`
++
+[listing]
+----
+{
+  "mnode_fqdn": "",
+  "use_proxy": false
+}
+----
+.. 选择 * 执行 * 。
+
+
+
+
+
+
+== 故障排除
+
+如果 FQDN 配置不正确，则在访问管理节点，存储集群或同时访问这两者时可能会出现问题。请使用以下信息帮助对问题描述进行故障排除。
+
+|===
+| 问题描述 | 发生原因 | 解决方法 
+
+
+ a| 
+* 尝试使用 FQDN 访问管理节点或存储集群时，出现浏览器错误。
+* 您不能使用 IP 地址登录到管理节点或存储集群。
+
+| 管理节点 FQDN 和存储集群 FQDN 配置不正确。 | 按照此页面上的 REST API 说明删除管理节点和存储集群 FQDN 设置并重新配置它们。 
+
+
+ a| 
+* 尝试访问存储集群 FQDN 时出现浏览器错误。
+* 您不能使用 IP 地址登录到管理节点或存储集群。
+
+| 已正确配置管理节点 FQDN ，但存储集群 FQDN 配置不正确。 | 按照此页面上的 REST API 说明删除存储集群 FQDN 设置并重新配置它们。 
+
+
+ a| 
+* 尝试访问管理节点 FQDN 时出现浏览器错误。
+* 您可以使用 IP 地址登录到管理节点和存储集群。
+
+| 管理节点 FQDN 配置不正确，但存储集群 FQDN 配置正确。 | 登录到 NetApp Hybrid Cloud Control 以更正 UI 中的管理节点 FQDN 设置，或者使用此页面上的 REST API 说明更正设置。 
+|===
+[discrete]
+== 了解更多信息
+
+* http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-api/GUID-93942724-1C4C-4F3D-B352-89498F7722ED.html["SolidFire和Element文档中心中的CreateClusterInterfacePrerefing API信息"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 资源页面"^]
+* http://docs.netapp.com/sfe-122/index.jsp["SolidFire 和 Element 软件文档中心"^]
+

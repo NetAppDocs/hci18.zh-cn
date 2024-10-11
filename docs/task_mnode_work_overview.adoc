@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_work_overview.html 
+summary: 您可以使用管理节点（ mNode ）使用系统服务，管理集群资产和设置，运行系统测试和实用程序，配置 Active IQ 以进行系统监控以及启用 NetApp 支持访问以进行故障排除。 
+keywords: netapp, mnode, api, rest api, mnode ui, management node ui 
+---
+= 管理节点概述
+:allow-uri-read: 
+
+
+[role="lead"]
+您可以使用管理节点（ mNode ）使用系统服务，管理集群资产和设置，运行系统测试和实用程序，配置 Active IQ 以进行系统监控以及启用 NetApp 支持访问以进行故障排除。
+
+对于运行 Element 软件 11.3 或更高版本的集群，您可以使用以下两个界面之一来使用管理节点：
+
+* 通过管理节点UI(`https:// [mNode IP}:442`，您可以更改网络和群集设置、运行系统测试或使用系统公用程序。
+* 通过内置的REST API UI(`https://[mNode IP}/mnode`，您可以运行或了解与管理节点服务相关的API，包括代理服务器配置、服务级别更新或资产管理。
+
+
+安装或恢复管理节点：
+
+* link:task_mnode_install.html["安装管理节点"]
+* link:task_mnode_install_add_storage_NIC.html["配置存储网络接口控制器（ NIC ）"]
+* link:task_mnode_recover.html["恢复管理节点"]
+
+
+访问管理节点：
+
+* link:task_mnode_access_ui.html["访问管理节点（ UI 或 REST API ）"]
+
+
+更改默认SSL证书：
+
+* link:reference_change_mnode_default_ssl_certificate.html["更改管理节点的默认SSL证书"]
+
+
+使用管理节点 UI 执行任务：
+
+* link:task_mnode_work_overview_UI.html["管理节点 UI 概述"]
+
+
+使用管理节点 REST API 执行任务：
+
+* link:task_mnode_work_overview_API.html["管理节点 REST API UI 概述"]
+
+
+禁用或启用远程 SSH 功能或启动与 NetApp 支持部门的远程支持通道会话，以帮助您进行故障排除：
+
+* link:task_mnode_enable_remote_support_connections.html["启用远程 NetApp 支持连接"]
+* link:task_mnode_ssh_management.html["在管理节点上管理 SSH 功能"]
+
+
+[discrete]
+== 了解更多信息
+
+* https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
+

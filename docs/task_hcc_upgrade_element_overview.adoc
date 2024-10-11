@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_upgrade_element_overview.html 
+summary: 在 NetApp HCI 系统升级过程中，您可以升级 NetApp Element 软件。 
+keywords: netapp, hci, on premise, cluster, element 
+---
+= 将存储集群上的Element软件升级到12.2版
+:allow-uri-read: 
+
+
+[role="lead"]
+在NetApp HCI或SolidFire存储系统升级过程中、您需要升级NetApp Element软件。
+
+您必须使用ithTools工具套件升级存储节点软件。
+
+.您需要的内容
+* 您正在运行管理节点 11.0 ， 11.1 或更高版本。
+* 您已将管理服务至少升级到版本 2.1.326 。
++
+NetApp Hybrid Cloud Control 升级在早期的服务包版本中不可用。
+
+
+
+.步骤
+. 确定存储集群上的Element版本。
+. 使用"ThTools"运行升级前检查。
+. 升级您的Element软件版本。
+. 在非公开站点升级您的Element软件版本。
+
+
+
+TIP: 要查看存储和计算资源的数量，请查看 NetApp 混合云控制（ HCC ）信息板。请参阅。 link:task_hcc_dashboard.html["在HCC信息板中查看存储和计算资源"]
+
+[discrete]
+== 了解更多信息
+
+* https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
+

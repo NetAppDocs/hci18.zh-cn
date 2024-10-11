@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: docs/task_upgrade_element_latest_healthtools.html 
+summary: 在系统升级过程中，您应升级到适用于 NetApp Element 的最新 HealthTools 软件。 
+keywords: netapp, HealthTools upgrade, sfupdate-healthtools, element 
+---
+= 升级到最新的 HealthTools
+:allow-uri-read: 
+
+
+[role="lead"]
+在开始Element存储升级之前、您应先升级您的ThTools套件。只有在运行的管理节点和 Element 软件为 11.1 或更早版本时，才需要升级 HealthTools 。使用 NetApp Hybrid Cloud Control 执行 Element 升级不需要 HealthTools 。
+
+.您需要的内容
+* 您正在运行管理节点 11.0 ， 11.1 或更高版本。
+* 您已将管理服务至少升级到版本 2.1.326 。
++
+NetApp Hybrid Cloud Control 升级在早期的服务包版本中不可用。
+
+* 您已下载最新版本的 https://mysupport.netapp.com/site/products/all/details/element-healthtools/downloads-tab["HealthTools"^]并将安装文件复制到管理节点。
++
+
+TIP: 您可以通过运行命令来检查本地安装的运行的运行状况工具版本 `sfupdate-healthtools -v`。
+
+* 要对非公开站点使用 HealthTools ，您需要执行以下附加步骤：
++
+** 从NetApp支持站点将下载link:https://library.netapp.com/ecm/ecm_get_file/ECMLP2840740["JSON文件"^]到非管理节点计算机上，并将其重命名为 `metadata.json`。
+** 在非公开站点上启动并运行管理节点。
+
+
+
+
+.关于此任务
+运行 HealthTools 套件中的命令需要升级权限。在命令前加上 `sudo`或将用户升级到root Privileges。
+
+
+NOTE: 您使用的 HealthTools 版本可能比下面的示例输入和响应更新版。
+
+.步骤
+. 运行命令以安装新的运行 `sfupdate-healthtools <path to install file>`工具软件。
++
+输入示例：
+
++
+[listing]
+----
+sfupdate-healthtools /tmp/solidfire-healthtools-2020.03.01.09.tgz
+----
++
+响应示例：
+
++
+[listing]
+----
+Checking key signature for file /tmp/solidfirehealthtools-2020.03.01.09/components.tgz
+installing command sfupdate-healthtools
+Restarting on version 2020.03.01.09
+sfupdate-healthtools /sf/bin/sfupdate-healthtools -r 2020.03.01.09
+installing command sfupgradecheck
+installing command sfinstall
+installing command sfresetupgrade
+----
+. 运行 `sfupdate-healthtools -v`命令以验证已安装的版本是否已升级。
++
+响应示例：
+
++
+[listing]
+----
+Currently installed version of HealthTools:
+2020.03.01.09
+----
+
+
+[discrete]
+== 了解更多信息
+
+* https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
+

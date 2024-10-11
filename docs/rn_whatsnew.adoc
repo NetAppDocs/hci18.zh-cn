@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_whatsnew.html 
+summary: 了解此版本的 NetApp HCI 中的新增功能。 
+keywords: netapp, hci, element, new, whatsnew 
+---
+= NetApp HCI 中的新增功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp 会定期更新 NetApp HCI ，为您提供新功能，增强功能和错误修复。NetApp HCI 1.8P1包括适用于存储集群的Element 12.2。
+
+* 本<<NetApp HCI 1.8P1>>节介绍NetApp HCI版本1.8P1中的新增功能和更新。
+* 本<<Element 12.2>>节介绍NetApp Element 12.2中的新增功能和更新。
+
+
+
+
+== NetApp HCI 1.8P1
+
+NetApp HCI 1.8P1 改进了安全性和稳定性。
+
+
+
+=== NetApp HCI文档增强功能
+
+现在，您可以通过易于导航的格式访问NetApp HCI升级、扩展、监控和概念信息link:index.html["此处"^]。
+
+
+
+=== 适用于vCenter Server 4.5的NetApp Element 插件可用性
+
+适用于vCenter Server 4.5的NetApp Element插件在管理节点12.2和NetApp HCI 1.8P1版本之外提供。要升级此插件、请按照文档中的说明进行操作link:concept_hci_upgrade_overview.html["NetApp HCI 升级"]。
+
+
+
+=== NetApp Hybrid Cloud Control增强功能
+
+NetApp混合云控制功能针对版本1.8P1进行了增强。 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["了解更多信息。"^](英文)。
+
+
+
+== Element 12.2
+
+NetApp HCI 1.8P1包括适用于存储集群的Element 12.2。Element 12.2引入了SolidFire企业级SDS、空闲软件加密、维护模式、增强的卷访问安全性、对用户界面的完全限定域名(FQDN)访问、存储节点固件更新和安全更新。
+
+
+
+=== SolidFire企业SDS
+
+Element 12.2引入了SolidFire企业SDS (ESDS)。SolidFire ESDS在您选择的硬件上提供SolidFire横向扩展技术和NetApp Element软件数据服务的优势、这些硬件符合SolidFire ESDS的参考配置。 http://docs.netapp.com/sfe-122/index.jsp?topic=%2Fcom.netapp.doc.sfe-sds-ig%2FGUID-F1BDD19F-AF33-4CDE-B67F-C5E17D4E6DE9.html["了解更多信息。"^](英文)。
+
+以下是与SolidFire相关的新Element API方法ESDS(http://docs.netapp.com/sfe-122/index.jsp?topic=%2Fcom.netapp.doc.sfe-sds-ug%2FGUID-4D335B61-6B68-4B81-AD6E-BCA1E7ABACD5.html["SolidFire ESDS的Element 12.2 API信息"^]具有详细信息)：
+
+* `GetLicenseKey`
+* `SetLicenseKey`
+
+
+
+
+=== 空闲软件加密
+
+Element 12.2引入了空闲软件加密、您可以在创建存储集群时启用此功能(默认情况下、在创建SolidFire企业SDS存储集群时启用此功能)。此功能会对存储节点中 SSD 上存储的所有数据进行加密，并且对客户端 IO 的性能影响非常小（~2% ）。
+
+以下是与空闲软件加密相关的Element API方法( http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-api/home.html["《Element API参考指南》"^]提供了详细信息)：
+
+* `CreateCluster`
+
+
+
+
+=== 维护模式
+
+Element 12.2引入了维护模式、通过此模式、您可以使存储节点脱机以进行维护(例如软件升级或主机修复)、同时防止所有数据完全同步。如果一个或多个节点需要维护、您可以在开始之前为这些节点启用维护模式、从而最大限度地减少I/O对存储集群其余部分的影响。您可以对两个设备节点以及SolidFire ESDS节点使用维护模式。
+
+
+
+=== 增强了卷访问安全性
+
+现在、您可以根据VLAN (虚拟网络)关联限制对某些启动程序的卷访问。您可以将新启动程序或现有启动程序与一个或多个虚拟网络相关联、从而将该启动程序限制为可通过这些虚拟网络访问的iSCSI目标。
+
+以下是与这些安全改进相关的已更新Element API方法( http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-api/home.html["《Element API参考指南》"^]提供了详细信息)：
+
+* `CreateInitiators`
+* `ModifyInitiators`
+* `AddAccount`
+* `ModifyAccount`
+
+
+
+
+=== 对用户界面的完全限定域名(FQDN)访问权限
+
+Element 12.2支持使用FQDN访问集群Web界面。在Element 12.2存储集群上、如果您使用FQDN访问Web用户界面(例如Element Web UI、每节点UI或管理节点UI)、则必须先添加存储集群设置以标识集群使用的FQDN。通过此设置、集群可以正确重定向登录会话、并有助于更好地与密钥管理器和身份提供程序等外部服务集成、以实现多因素身份验证。此功能需要使用管理服务版本为要么版本为要么版本为要么版本为要么版本为link:task_nde_access_ui_fqdn.html["了解更多信息。"](英文)
+
+
+
+=== 存储节点固件更新
+
+Element 12.2包括存储节点的固件更新。link:rn_relatedrn.html["了解更多信息。"](英文)
+
+
+
+=== 安全性增强功能
+
+Element 12.2解决了存储节点和管理节点的安全漏洞。 http://security.netapp.com/["了解更多信息。"^]关于这些安全增强功能。
+
+
+
+=== 针对故障驱动器的新SMART警告
+
+现在、Element 12.2使用SolidFire设备驱动器中的SMART运行状况数据对这些驱动器执行定期运行状况检查。未通过智能运行状况检查的驱动器可能接近故障。如果某个驱动器未通过SMART运行状况检查、则会显示一个新的严重严重性集群故障： `Drive with serial: <serial number> in slot: <node slot><drive slot> has failed the SMART overall health check. To resolve this fault, replace the drive`
+
+[discrete]
+== 了解更多信息
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["《 NetApp 混合云控制和管理服务发行说明》"^]
+* https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 资源页面"^]
+* http://docs.netapp.com/sfe-122/index.jsp["SolidFire 和 Element 软件文档中心"^]
+* link:firmware_driver_versions.html["NetApp HCI 支持的固件和ESXi驱动程序版本以及NetApp HCI 存储节点的固件版本"]
+

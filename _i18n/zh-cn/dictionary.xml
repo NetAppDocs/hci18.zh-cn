@@ -6206,8 +6206,6 @@
   <block id="a2b39afbde860c9c0fc759f3772e2dd2" category="paragraph">您应看到以下版本详细信息或较新版本的详细信息：</block>
   <block id="4715e0cc20eb79c52c1f181ce0f6afb0" category="admonition">vCenter 插件包含联机帮助内容。要确保帮助包含最新内容，请在升级插件后清除浏览器缓存。</block>
   <block id="db035ffffac30b1a95fd497625c55167" category="summary">使用 NetApp HCI 配置和管理文档以及 NetApp HCI 解决方案信息了解更多信息。</block>
-  <block id="ad0a505756223d68dc11afeae3459351" category="doc">NetApp HCI 文档</block>
-  <block id="5549e5d7fdce22b7e49447d7ef12cdce" category="sidebar">NetApp HCI文档1.8.</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">发行说明</block>
   <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">概念</block>
   <block id="4b983fff716674f120176e09551dd445" category="sidebar">产品概述</block>
@@ -6268,4 +6266,35 @@
   <block id="09445f34cd5729442e7b2de72fb58d64" category="list-text"><block ref="09445f34cd5729442e7b2de72fb58d64" category="inline-link-macro-rx"></block></block>
   <block id="36da361c4ac55f014f982e3621e4b133" category="list-text"><block ref="36da361c4ac55f014f982e3621e4b133" category="inline-link-macro-rx"></block></block>
   <block id="5e447c4788a02133d94738f6ce42f213" category="list-text"><block ref="5e447c4788a02133d94738f6ce42f213" category="inline-link-macro-rx"></block></block>
+  <block id="dc52bbc5e654712f4ec5736ec9f7dbc4" category="sidebar">NetApp HCI是一款适用于混合云的可扩展内部超融合基础架构。使用 NetApp HCI 配置和管理文档以及 NetApp HCI 解决方案信息了解更多信息。此站点包含NetApp HCI 1.8的文档。</block>
+  <block id="389672366ff11f72a82c5c495b9b5159" category="sidebar">NetApp HCI 1.8 文档</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">开始使用</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="01064f33f360eefba819bf9542c0486b" category="sidebar">安装和维护硬件</block>
+  <block id="147fc8b7d94adc0dceb5978ab928f776" category="sidebar">H 系列硬件安装</block>
+  <block id="09af8dd99d422c917dcb27847056b045" category="sidebar">H 系列硬件维护</block>
+  <block id="bc2592cdeeae26af69f28b4f6a1c8ca0" category="sidebar">安装 NetApp HCI</block>
+  <block id="96e1a5a82d70a24f161f0adb6e19ac8d" category="sidebar">安装和部署概述</block>
+  <block id="8a6e336622cf399a6453e4659f2a6147" category="sidebar">使用 NetApp 部署引擎开始部署</block>
+  <block id="a54d0ac20b8277a267fb90e8c0b05032" category="sidebar">执行部署后任务</block>
+  <block id="cfe80b2a0cabf734adc7b7c1613cfe4f" category="sidebar">使用 NetApp HCI</block>
+  <block id="930dca22f6f735a61fd8f484808fecb3" category="sidebar">使用 NetApp Hybrid Cloud Control 进行管理</block>
+  <block id="6cb5dfacb4ee1684b5483221bfcf580c" category="sidebar">使用适用于 vCenter Server 的 NetApp Element 插件</block>
+  <block id="4584c33b1e8065c9dccf2c31d92f9dbf" category="sidebar">使用 Rancher</block>
+  <block id="d02b5df8c0bf5a555ea650be898817f7" category="sidebar">展开 NetApp HCI</block>
+  <block id="748ace58318ab9d82392d680b07e89e6" category="sidebar">升级 NetApp HCI</block>
+  <block id="f7731734f4507319f744fe2c8158536a" category="sidebar">对 NetApp HCI 和 Rancher 进行故障排除</block>
+  <block id="eeabaf7c41bcd50a6a02694c070dbfb4" category="sidebar">重置计算节点上的 BMC</block>
+  <block id="166868e0f588717c1c62116a03c9b979" category="sidebar">更多知识库文章</block>
+  <block id="2a9dbfa4b74c53d7304fc8b79a1874d3" category="sidebar">解决方案</block>
+  <block id="fcf140abed196b8eba71c45f21312bce" category="sidebar">NetApp 解决方案</block>
+  <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">演示和教程</block>
+  <block id="45a52e6c046bce2a0f9f5253cc23fbd6" category="sidebar">NetApp HCI 视频库</block>
+  <block id="9135ac6f13de11d3b4b9f2f98ff9bcb8" category="sidebar">NetApp 学习服务</block>
+  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">博客和社区</block>
+  <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp 社区</block>
+  <block id="213686afc3803be7caa09348765467fe" category="sidebar">如何获取帮助</block>
+  <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">早期版本</block>
+  <block id="e6fd42fa4cb186f873c3977bc12f2291" category="sidebar">NetApp HCI 1.8文档</block>
 </blocks>

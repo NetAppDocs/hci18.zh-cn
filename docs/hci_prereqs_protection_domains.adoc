@@ -19,6 +19,5 @@ NetApp Element软件支持保护域功能、该功能可优化存储节点上的
 [discrete]
 == 了解更多信息
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
 

@@ -45,6 +45,5 @@ NOTE: 在 NetApp HCI 安装过程安装见证节点时， VMware vCenter 中会�
 [discrete]
 == 了解更多信息
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
 

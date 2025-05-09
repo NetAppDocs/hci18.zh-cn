@@ -24,5 +24,4 @@ keywords: netapp, hci, on premise, cluster, element, account, user, volume, hybr
 
 * http://docs.netapp.com/sfe-122/index.jsp["SolidFire 和 Element 12.2 文档中心"^]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 

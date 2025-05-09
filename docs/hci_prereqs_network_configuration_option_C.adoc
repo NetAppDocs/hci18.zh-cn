@@ -105,6 +105,5 @@ NOTE: 某些交换机可能要求在允许的原生列表中包含 VLAN 。请�
 [discrete]
 == 了解更多信息
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
 

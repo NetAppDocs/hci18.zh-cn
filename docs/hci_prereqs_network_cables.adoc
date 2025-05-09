@@ -40,6 +40,5 @@ NOTE: 在六缆线配置中，为 VMware ESXi 预留了两个端口，并由 Net
 [discrete]
 == 了解更多信息
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
 

@@ -86,7 +86,6 @@ link:concept_hci_clusters.html#authoritative-storage-clusters["权威存储集�
 
 * link:task_hcc_manage_accounts.html["管理用户帐户"]
 * link:concept_hci_clusters.html["了解集群"]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
 * https://docs.netapp.com/sfe-122/index.jsp["SolidFire和Element文档中心"^]
 

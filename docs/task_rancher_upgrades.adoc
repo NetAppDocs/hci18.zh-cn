@@ -333,5 +333,4 @@ NOTE: 对于节点操作系统，安全修补程序的无人值守升级会每�
 == 了解更多信息
 
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 

@@ -116,5 +116,4 @@ https://$mnode_IP:442/json-rpc/10.0 \
 
 * link:task_mnode_add_assets.html["向管理节点添加资产"]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 

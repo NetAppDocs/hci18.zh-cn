@@ -305,5 +305,4 @@ IMPORTANT: 与管理服务关联的永久性卷会在安装或升级期间创建
 * link:concept_hci_volumes.html["了解卷"]
 * http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-ug/GUID-2D2EAC0D-DD28-4ACA-A189-AA45E982EFDB.html["使用卷"^]
 * https://docs.netapp.com/us-en/vcp/index.html["适用于 vCenter Server 的 NetApp Element 插件"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 资源页面"^]
 

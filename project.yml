@@ -1,6 +1,6 @@
 ---
 settings:
-  name: HCI
+  name: NetApp HCI
   downlevel: true
   internal:
     pdf_enabled: true
